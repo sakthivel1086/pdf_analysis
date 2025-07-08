@@ -98,7 +98,7 @@ def draw_custom_ageing_chart(pdf, df):
 
     pdf.ln(chart_height + 15)
 
-@app.route('/convert', methods=['POST'])
+@app.route('/convert', methods=['GET','POST'])
 def convert_excel_to_pdf():
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
